@@ -52,7 +52,7 @@ export class AppComponent implements OnInit {
           return postsArray;
       }))
       .subscribe(posts => {
-        console.log(posts);
+        this.loadedPosts = posts;
       });
   }
 }
