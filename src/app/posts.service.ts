@@ -39,7 +39,8 @@ export class PostsService {
                 'https://ng-complete-guide-d0c0b-default-rtdb.firebaseio.com/posts.json',
                 {
                     headers: new HttpHeaders({'Custom-Header': 'Hello'}),
-                    params: searchParams
+                    params: searchParams,
+                    responseType: 'json'
                 }
             )
             .pipe(
@@ -62,7 +63,8 @@ export class PostsService {
     deletePosts() {
         return this.http
             .delete('https://ng-complete-guide-d0c0b-default-rtdb.firebaseio.com/posts.json', {
-                observe: 'events'
+                observe: 'events',
+                responseType: 'text'
             })
             .pipe(
                 tap(event => {
